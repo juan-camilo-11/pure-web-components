@@ -6,3 +6,4 @@ export { Dropdown } from "./components/dropdown/dropdown";
 export { Alert } from "./components/alert/alert";
 export { Tag } from "./components/tag/tag";
 export { Modal } from "./components/modal/modal";
+export { Navbar } from "./components/navbar/navbar";

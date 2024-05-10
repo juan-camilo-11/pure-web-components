@@ -2,7 +2,6 @@ import { LitElement, html, css } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
 import { selectIcon } from "../../utils/componentsTypes";
 import { TypeMessage, defatulText } from '../ constants/ constants';
-import { Button } from '../button/button';
 
 @customElement('pure-modal')
 export class Modal extends LitElement {
