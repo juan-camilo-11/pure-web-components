@@ -6,5 +6,6 @@ export declare class Navbar extends LitElement {
     private isActive?;
     static styles: import("lit").CSSResult;
     private handleClick;
+    private handleItems;
     render(): import("lit-html").TemplateResult<1>;
 }
