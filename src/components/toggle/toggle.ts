@@ -32,9 +32,9 @@ export class Toggle extends LitElement {
     }
     .div.true{
         justify-content: flex-end;
-        border: 1px solid #007bff;
+        border: 1px solid var(--pure-toggle-color-bg, #007bff);
         transition: .5s ease;
-        background-color: #007bff;
+        background-color: var(--pure-toggle-color-bg, #007bff);
     }
     .toggle.true{
         background-color: #fff;

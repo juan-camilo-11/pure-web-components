@@ -37,7 +37,7 @@ export class Dropdown extends LitElement {
         gap: 1rem;
     }
     .div.true{
-        border: 2px solid #007bff;
+        border: 1px solid var(--pure-dropdown-bg, #007bff);
     }
     .option{
         display: flex;
@@ -50,8 +50,8 @@ export class Dropdown extends LitElement {
         box-sizing: border-box;
     }
     .option:hover{
-        background-color: #4da3ff;
-        color: #fff;
+        background-color: var(--pure-dropdown-bg, #007bff);
+        color: var(--pure-dropdown-color, #FFF);
     }
     .options{
         max-width: 100%;
@@ -92,6 +92,4 @@ export class Dropdown extends LitElement {
         </div>
         `;
     }
-    
-
 }

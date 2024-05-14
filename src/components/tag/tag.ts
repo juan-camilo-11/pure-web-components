@@ -48,6 +48,4 @@ export class Tag extends LitElement {
         </div>
         `;
     }
-
-
 }

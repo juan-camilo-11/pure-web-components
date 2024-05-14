@@ -21,9 +21,9 @@ export class Checkbox extends LitElement {
         background-color: #fff;
     }
     .div.true{
-        border: 1px solid #007bff;
+        border: 1px solid var(--pure-checkbox-bg, #007bff);
         transition: .5s ease;
-        background-color: #007bff;
+        background-color: var(--pure-checkbox-bg, #007bff);
     }
     .div.disabled{
         justify-content: flex-end;
@@ -32,11 +32,13 @@ export class Checkbox extends LitElement {
         background-color: #aaaaaa;
         cursor: default;
     }
+    div path{
+        fill: var(--pure-checkbox-color, #FFF);
+    }
   `;
 
-    handleClick() {
-        this.status !== "disabled" ? this.status === "true" ? this.status = "false" : this.status = "true" : null
-        this.dispatchEvent(new CustomEvent('onPureClick'));
+    private handleClick() {
+        this.status !== "disabled" ? this.status === "true" ? this.status = "false" : this.status = "true" : null;
     }
 
     render() {
@@ -49,6 +51,4 @@ export class Checkbox extends LitElement {
             </div>
         `;
     }
-    
-
 }

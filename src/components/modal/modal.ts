@@ -99,11 +99,8 @@ export class Modal extends LitElement {
                   }
                 </div>
             </div>
-        </div>
-            
-        
+        </div> 
         `;
     }
-
 
 }

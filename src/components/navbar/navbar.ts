@@ -8,10 +8,10 @@ export class Navbar extends LitElement {
     navItems: string = '';
 
     @property()
-    logoUrl?: string = "https://upload.wikimedia.org/wikipedia/commons/c/ce/Coca-Cola_logo.svg";
+    logoUrl?: string = "";
 
     @property()
-    logoText?: string = "";
+    logoText?: string = "Pure";
 
     @property()
     private isActive?: boolean = false;
@@ -49,9 +49,9 @@ export class Navbar extends LitElement {
     }
     li:hover{
         color: #FFF;
-        border-right: solid 1px #5e5e5e;
+        border-right: solid 1px var(--pure-navbar-border-color, #5e5e5e);
         background-color: #EAEDED;
-        transition: 0.3s ease;
+        transition: background-color 0.3s ease;
     }
     li:hover a {
         color: #000;
@@ -91,13 +91,13 @@ export class Navbar extends LitElement {
         width: auto;
         height: auto;
         border: none;
-        background-color: #F4F6F6;
+        background-color: var(--pure-navbar-icon-open-bg, #F4F6F6);
         cursor: pointer;
     }
     .menu-icon {
         width: 25px;
         height: 2px;
-        background-color: #AAA;
+        background-color: var(--pure-navbar-icon-open-color, #AAA);
         position: relative;
         margin: 20px auto;
         transition: background-color .3s ease;
@@ -108,7 +108,7 @@ export class Navbar extends LitElement {
         content: '';
         width: 25px;
         height: 2px;
-        background-color: #AAA;
+        background-color: var(--pure-navbar-icon-open-color, #AAA);
         position: absolute;
         transition: background-color .3s ease;
     }
@@ -126,7 +126,7 @@ export class Navbar extends LitElement {
     .menu:hover .menu-icon::before,
     .menu:hover .menu-icon::after
     {
-        background-color: #000;
+        background-color: var(--pure-navbar-icon-open-hover, #000);
         transition: background-color .3s ease;
     }
     .d-flex {
@@ -220,7 +220,6 @@ export class Navbar extends LitElement {
 
     private handleClick() {
         this.isActive = !this.isActive;
-        console.log(this.isActive)
     }
 
 
@@ -252,6 +251,4 @@ export class Navbar extends LitElement {
         </nav>
         `;
     }
-
-
 }
