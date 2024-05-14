@@ -46,30 +46,20 @@ export class Navbar extends LitElement {
         justify-content: center;
         align-items: center;
         transition: 0.3s ease;
-    }
-    li:hover{
-        color: #FFF;
-        border-right: solid 1px var(--pure-navbar-border-color, #5e5e5e);
-        background-color: #EAEDED;
-        transition: background-color 0.3s ease;
-    }
-    li:hover a {
-        color: #000;
+        cursor: pointer;
     }
     a{
         width: calc(100% - 1rem);
         height: calc(100% - 1.6rem);
-        padding: .8rem 0rem;
+        padding: .8rem .5rem;
         color: #AAA;
         text-decoration: none;
-        margin-left: .5rem;
     }
-    li.active{
-        border-right: solid 1px #5e5e5e;
-        background-color: #EAEDED;
-    }
-    li.active a{
+    a:hover{
         color: #000;
+        border-right: solid 1px var(--pure-navbar-border-color, #5e5e5e);
+        background-color: #EAEDED;
+        transition: background-color 0.3s ease;
     }
     img{
         width: 4rem;
@@ -134,6 +124,12 @@ export class Navbar extends LitElement {
         justify-content: center;
         align-items: center;
         gap:.4rem;
+    }
+    .d-flex--colum {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     .container > div{
         width: 100%;
@@ -216,15 +212,44 @@ export class Navbar extends LitElement {
         cursor: pointer;
         margin-right: .5rem;
     }
+
+    .subItems{
+        display: none;
+        transition: height 0.3s ease;
+    }
+    .subItems.active{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        width: 100%;
+        height: auto;
+        transition: 0.3s ease;
+    }
+    .subItems li a{
+        color: #555555;
+    }
+    .item--a.active{
+        color: #000;
+        border-right: solid 1px var(--pure-navbar-border-color, #5e5e5e);
+        background-color: #EAEDED;
+        transition: background-color 0.3s ease;
+    }
   `;
 
     private handleClick() {
         this.isActive = !this.isActive;
     }
 
+    private handleItems(item: string) {
+        const aElement = this.shadowRoot?.querySelector(`#${item}--a`);
+        aElement?.classList.toggle("active");
+        const ulElement = this.shadowRoot?.querySelector(`#${item}`);
+        ulElement?.classList.toggle("active");
+    }
 
     render() {
-        const items: { text: string, url: string, active: string }[] = JSON.parse(this.navItems);
+        const items: { text: string, url: string, active: string, subItems: {text: string, url: string}[] }[] = JSON.parse(this.navItems);
         return html`
         <button @click="${this.handleClick}" class="menu"><div class="menu-icon"></div></button>
         <nav role="navigation" aria-label="Main" class="${this.isActive ? "active" : ""}">
@@ -239,12 +264,21 @@ export class Navbar extends LitElement {
                 </button>
             </div>
             <ul>
-                ${items.map(item => 
+                ${items.map(item =>
                     html`
-                    <li class="${item.active === "true" ? "active" : ""}">
-                        <a href="${item.url}" @click="${this.handleClick}">${item.text}</a>
-                    </li>
-                    `
+                        <li class="d-flex--colum ${item.active === "true" ? "active" : ""}">
+                            ${item.subItems !== undefined ? 
+                                html`
+                                <a id="${item.text}--a" class="item--a" @click="${() => {this.handleItems(item.text)}}">${item.text}</a>
+                                <ul id="${item.text}" class="subItems">
+                                ${item.subItems.map(subItem => 
+                                    html` 
+                                    <li><a href="${subItem.url}" @click="${this.handleClick}">${subItem.text}</a></li>
+                                `)}
+                                </ul>`
+                                :
+                                html`<a href="${item.url}" @click="${this.handleClick}">${item.text}</a>`}
+                        </li>`
                 )}
             </ul>
         </div>
