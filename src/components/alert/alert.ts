@@ -1,5 +1,5 @@
 import { LitElement, html, css } from 'lit';
-import { customElement, property, state } from 'lit/decorators.js';
+import { customElement, property } from 'lit/decorators.js';
 
 import { selectIcon, selectColor } from "../../utils/componentsTypes";
 import { defatulText, TypeMessage } from "../ constants/ constants";
@@ -26,7 +26,7 @@ export class Alert extends LitElement {
         justify-content: space-between;
         width: calc(50% - .8rem);
         border-radius: .3rem;
-        background-color: #fff;
+        background-color: var(--pure-alert-bg, #FFF);
         z-index: 1001;
         top: 1rem;
         margin: 0 auto;
@@ -39,6 +39,7 @@ export class Alert extends LitElement {
     p{
         max-width: 80%;
         margin: 0;
+        color: var(--pure-alert-color, #000);
         padding: .5rem 0;
         word-wrap: break-word;
     }
@@ -49,6 +50,9 @@ export class Alert extends LitElement {
         cursor:pointer;
         padding: .5rem 0;
         margin-right: .5rem;
+    }
+    .close path{
+        fill: var(--pure-alert-close-fill, #000);
     }
     .ico{
         display: flex;

@@ -18,8 +18,8 @@ export class Button extends LitElement {
     button {
       width: 100%;
       min-width: max-content;
-      background-color: #007bff;
-      color: #fff;
+      background-color: var(--pure-button-primary-bg, #007bff);
+      color: var(--pure-button-primary-color, #FFF);
       border: none;
       border-radius: 5px;
       cursor: pointer;
@@ -27,16 +27,16 @@ export class Button extends LitElement {
     }
 
     .primary:hover {
-      background-color: #0051a8;
+      background-color: var(--pure-button-primary-bg-hover, #0051a8);
       transition: .3s ease;
     }
     .secondary{
-      background-color: #ffffff;
-      color: #0056b3;
-      border: 1px solid #0056b3;
+      background-color: var(--pure-button-secondary-bg, #FFF);
+      color: var(--pure-button-secondary-color, #0056b3);
+      border: 1px solid var(--pure-button-secondary-color, #0056b3);
     }
     .secondary:hover{
-      background-color: #0057b33f;
+      background-color: var(--pure-button-secondary-bg-hover, #0057b33f);
       transition: .3s ease;
     }
     .small{

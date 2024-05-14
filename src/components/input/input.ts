@@ -41,7 +41,7 @@ export class Input extends LitElement {
         border-radius: .3rem;
     }
     input:focus{
-        border: 1px solid #007bff;
+        border: 1px solid var(--pure-input-focus, #007bff);
         outline: none;
     }
     .small{
