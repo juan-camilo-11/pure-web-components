@@ -69,11 +69,11 @@
         }
     }
     
-  `,i([(0,r.property)()],l.prototype,"status",void 0),i([(0,r.property)()],l.prototype,"text",void 0),i([(0,r.property)()],l.prototype,"type",void 0),e.Alert=l=i([(0,r.customElement)("pure-alert")],l)},232:function(t,e,s){var i=this&&this.__decorate||function(t,e,s,i){var o,r=arguments.length,n=r<3?e:null===i?i=Object.getOwnPropertyDescriptor(e,s):i;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)n=Reflect.decorate(t,e,s,i);else for(var a=t.length-1;a>=0;a--)(o=t[a])&&(n=(r<3?o(n):r>3?o(e,s,n):o(e,s))||n);return r>3&&n&&Object.defineProperty(e,s,n),n};Object.defineProperty(e,"__esModule",{value:!0}),e.Button=void 0;const o=s(552),r=s(924),n=s(6);let a=class extends o.LitElement{constructor(){super(...arguments),this.text=n.defatulText,this.btnClass="primary",this.size="medium"}render(){return o.html`
-      <button @click="${this.handleClick}" class="${this.btnClass} ${this.size}" disabled>
+  `,i([(0,r.property)()],l.prototype,"status",void 0),i([(0,r.property)()],l.prototype,"text",void 0),i([(0,r.property)()],l.prototype,"type",void 0),e.Alert=l=i([(0,r.customElement)("pure-alert")],l)},232:function(t,e,s){var i=this&&this.__decorate||function(t,e,s,i){var o,r=arguments.length,n=r<3?e:null===i?i=Object.getOwnPropertyDescriptor(e,s):i;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)n=Reflect.decorate(t,e,s,i);else for(var a=t.length-1;a>=0;a--)(o=t[a])&&(n=(r<3?o(n):r>3?o(e,s,n):o(e,s))||n);return r>3&&n&&Object.defineProperty(e,s,n),n};Object.defineProperty(e,"__esModule",{value:!0}),e.Button=void 0;const o=s(552),r=s(924),n=s(6);let a=class extends o.LitElement{constructor(){super(...arguments),this.text=n.defatulText,this.btnClass="primary",this.size="medium"}handleClick(){this.dispatchEvent(new CustomEvent("onPureClick"))}render(){return o.html`
+      <button @click=${this.handleClick} class="${this.btnClass} ${this.size}">
         ${this.text}
       </button>
-    `}handleClick(){this.dispatchEvent(new CustomEvent("onPureClick"))}};e.Button=a,a.styles=o.css`
+    `}};e.Button=a,a.styles=o.css`
     button {
       width: 100%;
       min-width: max-content;

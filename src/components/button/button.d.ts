@@ -5,6 +5,6 @@ export declare class Button extends LitElement {
     btnClass?: ClassComponent;
     size?: SizeComponent;
     static styles: import("lit").CSSResult;
-    render(): import("lit-html").TemplateResult<1>;
     private handleClick;
+    render(): import("lit-html").TemplateResult<1>;
 }
