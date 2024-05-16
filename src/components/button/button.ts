@@ -13,7 +13,7 @@ export class Button extends LitElement {
 
   @property()
   size?: SizeComponent = 'medium';
-  
+
   static styles = css`
     button {
       width: 100%;
@@ -53,15 +53,16 @@ export class Button extends LitElement {
     }
   `;
 
+  private handleClick() {
+    this.dispatchEvent(new CustomEvent('onPureClick'));
+  } 
+
   render() {
     return html`
-      <button @click="${this.handleClick}" class="${this.btnClass} ${this.size}" disabled>
+      <button @click=${this.handleClick} class="${this.btnClass} ${this.size}">
         ${this.text}
       </button>
     `;
   }
 
-  private handleClick() {
-    this.dispatchEvent(new CustomEvent('onPureClick'));
-  } 
 }
