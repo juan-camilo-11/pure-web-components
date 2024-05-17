@@ -15,19 +15,14 @@ export class Table extends LitElement {
         border-spacing: 0;
     }
     th, td {
-        padding: 8px;
-        border-top: 1px solid #CCCCCC;
-        border-bottom: 1px solid #CCCCCC;
+        padding: 1rem 1rem;
         text-align: left;
     }
+    tr {
+        border-bottom: 1px solid var(--pure-table-header-bg, #e9e9e9);
+    }
     th {
-        background-color: var(--pure-table-header-bg, #CACFD2);
-    }
-    tr:nth-child(even) {
-        background-color: #f2f2f2;
-    }
-    tr:nth-child(odd) {
-        background-color: #FFFFFF;
+        background-color: var(--pure-table-header-bg, #e9e9e9);
     }
   `;
 
