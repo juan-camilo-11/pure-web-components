@@ -25,6 +25,12 @@ export class Navbar extends LitElement {
         height: 100%;
         background-color: #F4F6F6;
         transition: 0.5s ease;
+        overflow: auto;
+    }
+    nav::-webkit-scrollbar {
+        
+        width: 0px;
+        height: 0px;
     }
     nav.active{
         display:flex;

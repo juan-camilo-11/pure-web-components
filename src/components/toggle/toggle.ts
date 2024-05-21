@@ -13,8 +13,7 @@ export class Toggle extends LitElement {
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        width: 100%;
-        max-width: 48px;
+        width: 48px;
         height: 24px;
         border: 1px solid #aaa;
         border-radius: 10rem;

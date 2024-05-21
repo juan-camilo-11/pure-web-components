@@ -1,6 +1,6 @@
 {
   "name": "pure-ui-web-components",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "Web components",
   "main": "build/index.js",
   "types": "build/*.d.ts",
