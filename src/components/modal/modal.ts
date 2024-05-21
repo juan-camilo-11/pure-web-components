@@ -81,7 +81,6 @@ export class Modal extends LitElement {
 
 
     render() {
-        
         return html`
         <div class="div ${this.status}"></div>
         <div class="container ${this.status}">
