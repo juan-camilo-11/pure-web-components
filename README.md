@@ -1,6 +1,6 @@
-Pure UI Web Components
-Este repositorio contiene una colección de web components personalizados diseñados para facilitar el desarrollo de interfaces de usuario modernas y atractivas. 
-Los componentes están construidos con LitElement y están listos para ser integrados en tus proyectos web.
+Pure UI Web Components:
+	Este repositorio contiene una colección de web components personalizados diseñados para facilitar el desarrollo de interfaces de usuario modernas y atractivas. 
+	Los componentes están construidos con LitElement y están listos para ser integrados en tus proyectos web.
 
 Documentacion aqui:
 https://juan-camilo-11.github.io/pure-landing-page/introduccion
