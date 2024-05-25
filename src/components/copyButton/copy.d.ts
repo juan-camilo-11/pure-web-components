@@ -5,5 +5,5 @@ export declare class Copy extends LitElement {
     text: string;
     static styles: import("lit").CSSResult;
     render(): import("lit-html").TemplateResult<1>;
-    copyText(): void;
+    private copyText;
 }

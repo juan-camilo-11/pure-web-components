@@ -9,7 +9,7 @@ export class Input extends LitElement {
     size?: SizeComponent = 'medium';
 
     @property()
-    message?: string = defatulText;
+    message?: string = "";
 
     @property()
     placeholder?: string = 'Placeholder';
@@ -34,9 +34,11 @@ export class Input extends LitElement {
     }
     p{
         margin: 0;
+        color: var(--color-input-message-text, #474747);
     }
     input{
-        max-width: 100%;
+        background-color: var(--color-input-bg, #FFF);
+        color: var(--color-input-text, #474747);
         border: 1px solid #aaaaaa;
         border-radius: .3rem;
     }
@@ -45,14 +47,17 @@ export class Input extends LitElement {
         outline: none;
     }
     .small{
+        width: calc(100% - 16px);
         font-size: 12px;
         padding: 6px 8px;
     }
     .medium{
+        width: calc(100% - 20px);
         font-size: 14px;
         padding: 8px 10px;
     }
     .large{
+        width: calc(100% - 28px);
         font-size: 16px;
         padding: 10px 14px;
     }
@@ -77,7 +82,11 @@ export class Input extends LitElement {
         return html`
             <div>
                 <input type="${this.type}" class="${this.size} ${this.status}" placeholder="${this.placeholder}"/>
-                <p class="${this.size} ${this.status}">${this.message !== "" ? this.message : ""}</p>
+                ${this.message
+                    ? html `<p class="${this.size} ${this.status}">${this.message !== "" ? this.message : ""}</p>`
+                    : html ``
+                  }
+                
             </div>
     `;
     }
