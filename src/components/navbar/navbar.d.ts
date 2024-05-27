@@ -1,5 +1,5 @@
 import { LitElement } from 'lit';
-export declare class Navbar extends LitElement {
+export default class Navbar extends LitElement {
     navItems: string;
     logoUrl?: string;
     logoText?: string;

@@ -4,7 +4,7 @@ import {customElement, property} from 'lit/decorators.js';
 import { defatulText, SizeComponent, ClassComponent} from "../ constants/ constants";
 
 @customElement('pure-button')
-export class Button extends LitElement {
+export default class Button extends LitElement {
   @property()
   text: string = defatulText;
 

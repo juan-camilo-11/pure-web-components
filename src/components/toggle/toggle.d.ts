@@ -1,6 +1,6 @@
 import { LitElement } from 'lit';
 import { StatusComponent } from '../ constants/ constants';
-export declare class Toggle extends LitElement {
+export default class Toggle extends LitElement {
     status?: StatusComponent;
     static styles: import("lit").CSSResult;
     private handleClick;

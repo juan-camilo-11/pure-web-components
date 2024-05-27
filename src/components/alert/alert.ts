@@ -5,7 +5,7 @@ import { selectIcon, selectColor } from "../../utils/componentsTypes";
 import { defatulText, TypeMessage } from "../ constants/ constants";
 
 @customElement('pure-alert')
-export class Alert extends LitElement {
+export default class Alert extends LitElement {
 
     @property()
     status?: boolean = false;

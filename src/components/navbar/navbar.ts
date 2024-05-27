@@ -2,7 +2,7 @@ import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 @customElement('pure-navbar')
-export class Navbar extends LitElement {
+export default class Navbar extends LitElement {
 
     @property()
     navItems: string = '';

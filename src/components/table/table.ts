@@ -2,7 +2,7 @@ import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 @customElement('pure-table')
-export class Table extends LitElement {
+export default class Table extends LitElement {
     @property()
     content: string = '';
     

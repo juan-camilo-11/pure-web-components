@@ -4,7 +4,7 @@ import { pasterSelectColor, selectTextColor } from "../../utils/componentsTypes"
 import { SizeComponent, TypeMessage, defatulText } from '../ constants/ constants';
 
 @customElement('pure-tag')
-export class Tag extends LitElement {
+export default class Tag extends LitElement {
 
     @property()
     size?: SizeComponent = 'medium';

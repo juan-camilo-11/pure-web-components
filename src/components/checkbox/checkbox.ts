@@ -2,7 +2,7 @@ import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { StatusComponent } from '../ constants/ constants';
 @customElement('pure-checkbox')
-export class Checkbox extends LitElement {
+export default class Checkbox extends LitElement {
 
     @property()
     status?: StatusComponent  = "false";

@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js';
 import { SizeComponent, defatulText } from '../ constants/ constants';
 
 @customElement('pure-input')
-export class Input extends LitElement {
+export default class Input extends LitElement {
 
     @property()
     size?: SizeComponent = 'medium';

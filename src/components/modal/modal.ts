@@ -4,7 +4,7 @@ import { selectIcon } from "../../utils/componentsTypes";
 import { TypeMessage, defatulText } from '../ constants/ constants';
 
 @customElement('pure-modal')
-export class Modal extends LitElement {
+export default class Modal extends LitElement {
 
     @property({ type: Boolean }) status = false;
     @property({ type: String }) text = defatulText;

@@ -1,6 +1,6 @@
 import { LitElement } from 'lit';
 import { SizeComponent } from '../ constants/ constants';
-export declare class Input extends LitElement {
+export default class Input extends LitElement {
     size?: SizeComponent;
     message?: string;
     placeholder?: string;
