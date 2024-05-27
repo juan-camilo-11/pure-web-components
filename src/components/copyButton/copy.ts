@@ -19,6 +19,7 @@ export default class Copy extends LitElement {
       }
       
       input {
+        color: var(--pure-input-color, #000);
         padding: .5rem;
         font-size: 12px;
         flex-grow: 1;
