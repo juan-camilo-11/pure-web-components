@@ -1,11 +1,13 @@
 import { LitElement } from 'lit';
-import { TypeMessage } from "../ constants/ constants";
 export default class Alert extends LitElement {
     status?: boolean;
     text: string;
-    type: TypeMessage;
+    type: string;
     static styles: import("lit").CSSResult;
-    private handleClick;
-    private close;
+    private onPureClose;
+    connectedCallback(): void;
     render(): import("lit-html").TemplateResult<1>;
 }
+export declare const AlertComponent: import("@lit-labs/react").ReactWebComponent<Alert, {
+    onPureClose: string;
+}>;

@@ -2,7 +2,9 @@ import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 import { selectIcon, selectColor } from "../../utils/componentsTypes";
-import { defatulText, TypeMessage } from "../ constants/ constants";
+import { defatulText } from "../ constants/ constants";
+import { createComponent } from '@lit-labs/react';
+import React from 'react';
 
 @customElement('pure-alert')
 export default class Alert extends LitElement {
@@ -14,7 +16,7 @@ export default class Alert extends LitElement {
     text: string = defatulText;
 
     @property()
-    type: TypeMessage = "info";
+    type: string = "info";
 
     static styles = css`
     .div{
@@ -82,11 +84,13 @@ export default class Alert extends LitElement {
     
   `;
 
-    private handleClick() {
+    private onPureClose(event: MouseEvent) {
+        event.stopPropagation();
+        this.dispatchEvent(new CustomEvent('onPureClose'));
         this.status = false;
     }
 
-    private close() {
+    connectedCallback() {
         super.connectedCallback();
         setTimeout(() => {
             this.status = false;
@@ -98,10 +102,19 @@ export default class Alert extends LitElement {
         <div class="div ${this.status}" style="border-left: 3px solid #${selectColor(this.type)};">
             <div class="ico">${selectIcon(this.type)}</div>
             <p>${this.text}</p>
-            <div @click="${this.handleClick}" class="close"><svg xmlns="http://www.w3.org/2000/svg" height="14" width="10.5" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#000000" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg></div>
+            <div @click="${this.onPureClose}" class="close"><svg xmlns="http://www.w3.org/2000/svg" height="14" width="10.5" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#000000" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg></div>
         </div>
         `;
     }
 
 
 }
+
+export const AlertComponent = createComponent({
+    tagName: 'pure-alert',
+    elementClass: Alert,
+    react: React,
+    events: {
+        onPureClose: 'onPureClose',
+    },
+});
