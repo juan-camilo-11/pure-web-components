@@ -1,6 +1,6 @@
 import { LitElement } from 'lit';
 import { StatusComponent } from '../ constants/ constants';
-export declare class Dropdown extends LitElement {
+export default class Dropdown extends LitElement {
     status?: StatusComponent;
     placeholder?: string;
     options: string[];

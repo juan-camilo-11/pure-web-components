@@ -1,6 +1,6 @@
 import { LitElement } from 'lit';
 import { SizeComponent, ClassComponent } from "../ constants/ constants";
-export declare class Button extends LitElement {
+export default class Button extends LitElement {
     text: string;
     btnClass?: ClassComponent;
     size?: SizeComponent;

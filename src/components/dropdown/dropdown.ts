@@ -3,7 +3,7 @@ import { customElement, property, state } from 'lit/decorators.js';
 import { StatusComponent } from '../ constants/ constants';
 
 @customElement('pure-dropdown')
-export class Dropdown extends LitElement {
+export default class Dropdown extends LitElement {
 
     @property()
     status?: StatusComponent  = "false";

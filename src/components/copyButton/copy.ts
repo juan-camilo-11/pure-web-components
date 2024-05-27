@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js';
 import { SizeComponent, defatulText } from '../ constants/ constants';
 
 @customElement('pure-copy')
-export class Copy extends LitElement {
+export default class Copy extends LitElement {
 
     @property()
     size?: SizeComponent = 'medium';

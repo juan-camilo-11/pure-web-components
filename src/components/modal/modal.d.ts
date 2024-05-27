@@ -1,6 +1,6 @@
 import { LitElement } from 'lit';
 import { TypeMessage } from '../ constants/ constants';
-export declare class Modal extends LitElement {
+export default class Modal extends LitElement {
     status: boolean;
     text: string;
     desc: string;

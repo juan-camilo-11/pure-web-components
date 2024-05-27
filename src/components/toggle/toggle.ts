@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js';
 import { StatusComponent } from '../ constants/ constants';
 
 @customElement('pure-toggle')
-export class Toggle extends LitElement {
+export default class Toggle extends LitElement {
 
     @property()
     status?: StatusComponent  = "false";

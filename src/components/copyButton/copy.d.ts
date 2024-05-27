@@ -1,6 +1,6 @@
 import { LitElement } from 'lit';
 import { SizeComponent } from '../ constants/ constants';
-export declare class Copy extends LitElement {
+export default class Copy extends LitElement {
     size?: SizeComponent;
     text: string;
     static styles: import("lit").CSSResult;

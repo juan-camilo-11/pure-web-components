@@ -1,6 +1,6 @@
 import { LitElement } from 'lit';
 import { TypeMessage } from "../ constants/ constants";
-export declare class Alert extends LitElement {
+export default class Alert extends LitElement {
     status?: boolean;
     text: string;
     type: TypeMessage;
