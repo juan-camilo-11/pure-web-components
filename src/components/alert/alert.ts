@@ -87,6 +87,7 @@ export default class Alert extends LitElement {
     private onPureClose(event: MouseEvent) {
         event.stopPropagation();
         this.dispatchEvent(new CustomEvent('onPureClose'));
+        this.status = false;
     }
 
     connectedCallback() {
