@@ -9,3 +9,4 @@ export { default as Modal } from "./components/modal/modal";
 export { default as Navbar } from "./components/navbar/navbar";
 export { default as Table } from "./components/table/table";
 export { default as Copy } from "./components/copyButton/copy";
+export { default as AlertComponent } from "./components/alert/alert";
