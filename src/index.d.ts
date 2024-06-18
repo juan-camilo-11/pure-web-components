@@ -10,3 +10,4 @@ export { default as Navbar } from "./components/navbar/navbar";
 export { default as Table } from "./components/table/table";
 export { default as Copy } from "./components/copyButton/copy";
 export { default as AlertComponent } from "./components/alert/alert";
+export { default as Expand } from "./components/expand/expand";
