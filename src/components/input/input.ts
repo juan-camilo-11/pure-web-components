@@ -15,7 +15,7 @@ export default class Input extends LitElement {
     placeholder?: string = 'Placeholder';
 
     @property()
-    defaultValue?: string = '';
+    value?: string = '';
 
     @property()
     status?: 'info' | 'error' = 'info';
@@ -78,14 +78,29 @@ export default class Input extends LitElement {
     }
   `;
 
+    private onPureChange(event: any) {
+        this.value = event.target.value;
+        this.dispatchEvent(new CustomEvent('onPureChange', {
+            bubbles: true,
+            composed: true,
+            detail: { value: this.value }
+        }));
+    }
+
+
     render() {
         return html`
             <div>
-                <input type="${this.type}" class="${this.size} ${this.status}" placeholder="${this.placeholder}"/>
+                <input  
+                    type="${this.type}"
+                    class="${this.size} ${this.status}" 
+                    placeholder="${this.placeholder}"
+                    @input="${this.onPureChange}"
+                    />
                 ${this.message
-                    ? html `<p class="${this.size} ${this.status}">${this.message !== "" ? this.message : ""}</p>`
-                    : html ``
-                  }
+                ? html`<p class="${this.size} ${this.status}">${this.message !== "" ? this.message : ""}</p>`
+                : html``
+            }
                 
             </div>
     `;
